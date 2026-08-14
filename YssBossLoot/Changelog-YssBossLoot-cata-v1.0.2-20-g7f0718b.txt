@@ -1,0 +1,21 @@
+Yssaril:
+	- update toc to Interface: 40000
+	- enable multiline bossnames in the loot frame
+	- add cata raid boss locations and fix multiboss tag for ST
+	- add all cata dungeon bosses and locations. also modified miner accordingly
+	- update Deadmines boss names. may i have a Cookie now?
+	- reparent blob frames during combat (code taken from mapster if mapster is active YBL will remove its own code and rely on mapster to reparent the blobs)
+	- add Sunken Temple Multibosses to miner and remine
+	- map out bossnames for Sunken Temple, The Stockade, and parts of Shadowfang Keep (damn invisible walls)
+	- remove height from bossframenamefontstring to allow for multiline bossnames
+	- move SFK and Deadmines over to Cata section and add Map ID for TFW
+	- add onyxia location and started on adding cata stuff
+	- account for Twin Emps and Bug family as multibosses
+	- add all classic raid boss locations
+	- Gyth is a subboss of Rend (adjusted miner and reran it)
+	- all classic dungeons mapped out need to refine boss names still (some may have changed)
+	- move non bossloot to the bottom right corner to minimize map interferance
+	- add some more boss location mappings
+	- started adding in some boss locations
+	- loot window works properly again (fixed animations apperantly only the anim group accepts the stop/play commands not the animation itself)
+	- initial zone updates for cata (loot display is still broken)
