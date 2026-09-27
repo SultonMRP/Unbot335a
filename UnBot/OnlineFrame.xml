@@ -66,7 +66,7 @@
 		</OnClick>
 	</Scripts>
   </CheckButton>
-  <Frame name="OnlineFrame" movable="true" enableMouse="true" toplevel="true" frameStrata="LOW" hidden="true">
+  <Frame name="OnlineFrame" movable="true" enableMouse="true" toplevel="true" frameStrata="MEDIUM" hidden="true">
 	<TitleRegion setAllPoints="true"/>
     <Size>
       <AbsDimension x="610" y="470" />

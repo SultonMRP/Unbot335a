@@ -117,8 +117,8 @@ function InitializeUnBotFrame()
 		ResetCommandToAction(groupButton, UnBotCommandBarConfig[i],false);
 	end
 	UnBotUpdateHotkeys();
-
 	InitializeStrategy();
+	UnBotApplyFrameLock();
 	DisplayInfomation("Bot controller initialization complete");
 
 end
@@ -271,6 +271,69 @@ end
 
 function DisplayInfomation(info)
 	DEFAULT_CHAT_FRAME:AddMessage("|cff00cccc"..info.."|r");--ChatFrame1
+end
+
+function UnBotSlashCommand(msg)
+	if (msg == nil) then
+		msg = "";
+	end
+	msg = string.lower(strtrim(msg));
+	if (msg == "lock") then
+		UnBotToggleFrameLock();
+		return;
+	end
+	if (UnBotFrame:IsShown()) then
+		UnBotCloseAll();
+	else
+		UnBotFrame:Show();
+	end
+end
+
+function UnBotGetFrameTitleRegion()
+	if (UnBotFrameTitleRegion ~= nil) then
+		return UnBotFrameTitleRegion;
+	end
+	if (UnBotFrame.GetTitleRegion ~= nil) then
+		return UnBotFrame:GetTitleRegion();
+	end
+	return nil;
+end
+
+function UnBotApplyFrameLock()
+	local locked = false;
+	if (UnBotCommandBarConfig ~= nil and UnBotCommandBarConfig["FrameLocked"] == true) then
+		locked = true;
+	end
+	if (locked == true) then
+		UnBotFrame:SetMovable(false);
+	else
+		UnBotFrame:SetMovable(true);
+	end
+	-- TitleRegion is not a Frame on 3.3.5a; EnableMouse is nil and used
+	-- to abort InitializeUnBotFrame before InitializeStrategy() filled the lists.
+	local title = UnBotGetFrameTitleRegion();
+	if (title ~= nil and title.EnableMouse ~= nil) then
+		if (locked == true) then
+			title:EnableMouse(false);
+		else
+			title:EnableMouse(true);
+		end
+	end
+end
+
+function UnBotToggleFrameLock()
+	if (UnBotCommandBarConfig == nil) then
+		UnBotCommandBarConfig = {};
+	end
+	if (UnBotCommandBarConfig["FrameLocked"] == true) then
+		UnBotCommandBarConfig["FrameLocked"] = false;
+		UnBotApplyFrameLock();
+		DisplayInfomation("Bot action bar unlocked. You can drag it again.");
+	else
+		UnBotCommandBarConfig["FrameLocked"] = true;
+		UnBotApplyFrameLock();
+		DisplayInfomation("Bot action bar locked. It cannot be dragged.");
+	end
 end
 
 function CanAddToUnBotFrame(targetName)

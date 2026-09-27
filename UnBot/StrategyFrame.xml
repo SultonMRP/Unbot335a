@@ -102,7 +102,7 @@
 		<Frames>
 		</Frames>
 	</ScrollFrame>
-  <Frame name="StrategyFrameTemplate" movable="true" enableMouse="true" virtual="true" toplevel="true" frameStrata="LOW" hidden="true">
+  <Frame name="StrategyFrameTemplate" movable="true" enableMouse="true" virtual="true" toplevel="true" frameStrata="MEDIUM" hidden="true">
 	<TitleRegion setAllPoints="true"/>
     <Size>
       <AbsDimension x="340" y="400" />

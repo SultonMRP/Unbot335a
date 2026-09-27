@@ -5,6 +5,14 @@
 			<AbsDimension y="30" x="30"/>
 		</Size>
 	</Button>
+	<Button name="UnBotBagsQueryButtonTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="16" y="16"/>
+		</Size>
+		<NormalTexture file="Interface\AddOns\UnBot\Assets\query_16"/>
+		<PushedTexture file="Interface\AddOns\UnBot\Assets\query_16"/>
+		<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+	</Button>
 	<CheckButton name="UnBotBagsTypeTemplate" checked="false" virtual="true">
 		<Size>
 		  <AbsDimension x="30" y="30" />
@@ -22,7 +30,7 @@
 			</OnClick>
 		</Scripts>
 	</CheckButton>
-	<Frame name="UnBotBagsFrameHeadFrame" toplevel="true" frameStrata="LOW" virtual="true" hidden="false">
+	<Frame name="UnBotBagsFrameHeadFrame" toplevel="true" frameStrata="MEDIUM" virtual="true" hidden="false">
 		<Size x="350" y="32"/>
 		<Anchors>
 			<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
@@ -35,7 +43,7 @@
 			<Color r="0.1" g="0.1" b="0.1" a="0.1"/>
 		</Backdrop>
 	</Frame>
-	<Frame name="UnBotBagsFrame" movable="true" enableMouse="true" toplevel="true" frameStrata="LOW" virtual="true" hidden="false">
+	<Frame name="UnBotBagsFrame" movable="true" enableMouse="true" toplevel="true" frameStrata="MEDIUM" virtual="true" hidden="false">
 		<TitleRegion setAllPoints="true"/>
 		<Size x="350" y="220"/>
 		<Anchors>
